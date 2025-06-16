@@ -1,4 +1,4 @@
-const nomeProjeto = "Salsa";
+const nomeProjeto = "Tecnoverde: Cultivando o Futuro";
 
 // Função que mostra ou oculta as opções de acessibilidade
 function acessibilidade() {
@@ -11,6 +11,8 @@ function aplicarFonteSalva() {
   var tamanhoSalvo = localStorage.getItem("tamanhoFonte");
   if (tamanhoSalvo) {
     document.querySelector("body").style.fontSize = tamanhoSalvo + "px";
+  } else {
+    document.querySelector("body").style.fontSize = "1em"; // Define o tamanho padrão caso não haja nada salvo
   }
 }
 
@@ -34,11 +36,7 @@ function diminuirFonte() {
 
 function resetarFonte() {
   var body = document.querySelector("body");
-  if (body.windowSize < 768) {
-    body.style.fontSize = "1em"; // Define o tamanho padrão da fonte
-  } else {
-    body.style.fontSize = "1.2em"; // Define o tamanho padrão da fonte
-  }
+  body.style.fontSize = "1em"; // Define o tamanho padrão da fonte
   localStorage.removeItem("tamanhoFonte"); // Remove o tamanho salvo no localStorage
 }
 
@@ -120,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const links = [
     { href: "index.html", label: "Início" },
     { href: "curiosidades.html", label: "Curiosidades" },
-    { href: "papel_semente.html", label: "Papel Semente" },
+    { href: "passo_a_passo.html", label: "Passo a Passo" },
     { href: "plantio.html", label: "Plantio" },
     { href: "colaboradores.html", label: "Colaboradores" },
-    { href: "qrcode.html", label: "QR Code" },
+    { href: "qr_code.html", label: "QR Code" },
   ];
 
   // Gera os links com a classe active no link da página atual
@@ -137,9 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .join("");
 
   navBar.innerHTML = `
-    <div class="tema">
-      <h1>Salsa</h1>
-    </div>
+    <a href="index.html" class="logo">
+      <div class="tema">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+        <h1>${nomeProjeto}</h1>
+      </div>
+    </a>
     <menu>
       <button onclick="menuToggle()" class="menu-button">
         <span class="material-symbols-outlined burger"> menu </span>
@@ -154,9 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const footer = document.querySelector("footer");
   footer.innerHTML = `
     <div class="acessibilidade">
-      <button id="acessibilidade" onclick="acessibilidade()">
-        <span class="material-symbols-outlined"> accessibility_new </span>
-      </button>
       <div class="opcoes-acessibilidade">
         <button id="aumentar-fonte" onclick="aumentarFonte()">
           <span class="material-symbols-outlined"> add </span>
@@ -168,6 +166,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <span class="material-symbols-outlined"> restart_alt </span>
         </button>
       </div>
+      <button id="acessibilidade" onclick="acessibilidade()">
+        <span class="material-symbols-outlined"> accessibility_new </span>
+      </button>
     </div>
     <p>
       &copy; 2025 <br>
