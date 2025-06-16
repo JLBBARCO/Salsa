@@ -117,11 +117,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Lista de links do menu
   const links = [
     { href: "index.html", label: "Início" },
+    { href: "sobre.html", label: "Sobre" },
     { href: "curiosidades.html", label: "Curiosidades" },
+    { href: "materiais.html", label: "Materiais" },
     { href: "passo_a_passo.html", label: "Passo a Passo" },
-    { href: "plantio.html", label: "Plantio" },
+    { href: "cuidados.html", label: "Cuidados" },
     { href: "colaboradores.html", label: "Colaboradores" },
-    { href: "qr_code.html", label: "QR Code" },
   ];
 
   // Gera os links com a classe active no link da página atual
@@ -135,12 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .join("");
 
   navBar.innerHTML = `
-    <a href="index.html" class="logo">
-      <div class="tema">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
-        <h1>${nomeProjeto}</h1>
-      </div>
-    </a>
+    <div class="tema">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+      <h1>${nomeProjeto}</h1>
+    </div>
     <menu>
       <button onclick="menuToggle()" class="menu-button">
         <span class="material-symbols-outlined burger"> menu </span>

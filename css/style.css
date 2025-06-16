@@ -5,13 +5,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
 
 :root {
-  --primary-color: #4d9b4b;
-  --secondary-color: #bdcfb2;
+  --primary-color: #2da32b;
+  --secondary-color: #9cca80;
   --ternary-color: #7b5e47;
   --background-color: #f0f8f1;
   --title-color: #6e8b61;
   --text-color: #fafafa;
   --text-color-contrast: #1b1b1b;
+  --color-footer: #100d1d;
   --title-font: "Sansita Swashed", cursive;
   --body-font: "Roboto Mono", monospace;
   --shadow: 0 4px 8px #00000033;
@@ -59,10 +60,6 @@ nav {
   box-shadow: var(--shadow);
   display: flex;
   justify-content: space-between;
-}
-
-nav a:hover {
-  text-decoration: none;
 }
 
 nav div.tema h1 {
@@ -118,6 +115,8 @@ nav a {
 
 nav a:hover {
   background-color: var(--ternary-color);
+  text-decoration: none;
+  color: var(--primary-color);
 }
 
 nav a.active {
@@ -170,7 +169,7 @@ main section {
   align-items: center; /* Centraliza horizontalmente */
   min-height: 75vh; /* Garante altura mínima para centralização */
   text-align: center; /* Opcional: centraliza o texto */
-  padding: 20px;
+  padding: 10px;
   background-color: var(--background-color);
 }
 
@@ -183,6 +182,7 @@ main img {
   height: auto;
   display: block;
   margin: 20px auto;
+  border-radius: 8px;
 }
 
 main p,
@@ -206,7 +206,7 @@ main a:hover {
 }
 
 footer {
-  background-color: var(--primary-color);
+  background-color: var(--color-footer);
   color: var(--text-color);
   width: auto;
   padding: 25px;
@@ -284,7 +284,7 @@ footer p {
 
   nav a.active {
     border: 0;
-    border-bottom: 5px solid var(--title-color);
+    border-bottom: 5px solid var(--text-color);
   }
 
   main {
@@ -300,7 +300,6 @@ footer p {
 
   main img {
     float: right;
-    width: 320px;
     max-width: 20%;
     margin: 20px;
     border-radius: 8px;
