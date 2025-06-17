@@ -8,6 +8,8 @@
   --primary-color: #2da32b;
   --secondary-color: #cfc;
   --ternary-color: #7b5e47;
+  --background-title: #487e38;
+  --title-menu-color: #f5e4c3;
   --background-color: #f0f8f1;
   --title-color: #6e8b61;
   --text-color: #fafafa;
@@ -162,6 +164,7 @@ main a {
   font-family: var(--body-font);
   margin: auto;
   display: inline-block;
+  height: 50px;
 }
 
 main section {
@@ -180,10 +183,12 @@ main section:nth-child(odd) {
 }
 
 main section.title {
-  border: 5px solid var(--title-color);
-  border-radius: 10px;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--background-title);
+}
+
+main section.title h1 {
+  font-size: 3em;
+  color: var(--title-menu-color);
 }
 
 main section span {
@@ -191,6 +196,26 @@ main section span {
   font-size: 2rem;
   color: var(--title-color);
   margin-bottom: 10px;
+}
+
+div.botoes-title {
+  width: 75%;
+  display: inline;
+}
+
+div.botoes-title a {
+  margin: 10px;
+}
+
+div.botoes-title a:hover {
+  text-decoration: none;
+}
+
+main section ul,
+main section ol {
+  margin: 0 25%;
+  text-align: justify;
+  color: var(--text-color-contrast);
 }
 
 main section.menu {
@@ -325,6 +350,11 @@ footer p {
     border-radius: 8px;
     box-shadow: var(--shadow);
     display: block;
+  }
+
+  main section.menu div.botoes a {
+    height: 50px;
+    margin: 15px;
   }
 }
 
