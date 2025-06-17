@@ -6,13 +6,13 @@
 
 :root {
   --primary-color: #2da32b;
-  --secondary-color: #9cca80;
+  --secondary-color: #cfc;
   --ternary-color: #7b5e47;
   --background-color: #f0f8f1;
   --title-color: #6e8b61;
   --text-color: #fafafa;
   --text-color-contrast: #1b1b1b;
-  --color-footer: #100d1d;
+  --color-footer: #2a2a2a;
   --title-font: "Sansita Swashed", cursive;
   --body-font: "Roboto Mono", monospace;
   --shadow: 0 4px 8px #00000033;
@@ -111,6 +111,7 @@ nav a {
   transition: background-color 0.3s ease;
   height: 100%;
   width: 75%;
+  margin: 10px;
 }
 
 nav a:hover {
@@ -135,6 +136,7 @@ nav a.logo img {
 main {
   font-family: var(--body-font);
   color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 main h1,
@@ -175,6 +177,24 @@ main section {
 
 main section:nth-child(odd) {
   background-color: var(--secondary-color);
+}
+
+main section.title {
+  border: 5px solid var(--title-color);
+  border-radius: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+main section span {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+
+main section.menu {
+  background-color: var(--background-color);
 }
 
 main img {
