@@ -1,3 +1,5 @@
+const nomeProjeto = "Tecnoverde: Cultivando o Futuro";
+
 // Função que mostra ou oculta as opções de acessibilidade
 function acessibilidade() {
   var opcoes = document.querySelector(".opcoes-acessibilidade");
@@ -9,6 +11,8 @@ function aplicarFonteSalva() {
   var tamanhoSalvo = localStorage.getItem("tamanhoFonte");
   if (tamanhoSalvo) {
     document.querySelector("body").style.fontSize = tamanhoSalvo + "px";
+  } else {
+    document.querySelector("body").style.fontSize = "1em"; // Define o tamanho padrão caso não haja nada salvo
   }
 }
 
@@ -28,6 +32,12 @@ function diminuirFonte() {
   var newSize = parseFloat(currentSize) * 0.8; // Diminui o tamanho da fonte em 20%
   body.style.fontSize = newSize + "px";
   localStorage.setItem("tamanhoFonte", newSize); // Salva o novo tamanho no localStorage
+}
+
+function resetarFonte() {
+  var body = document.querySelector("body");
+  body.style.fontSize = "1em"; // Define o tamanho padrão da fonte
+  localStorage.removeItem("tamanhoFonte"); // Remove o tamanho salvo no localStorage
 }
 
 // Aplica o tamanho da fonte salvo ao carregar a página
@@ -99,18 +109,69 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Adiciona a barra de navegação ao topo da página
+  const navBar = document.querySelector("nav");
+  // Obtém o nome do arquivo atual
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Lista de links do menu
+  const links = [
+    { href: "index.html", label: "Início" },
+    { href: "sobre.html", label: "Sobre" },
+    { href: "curiosidades.html", label: "Curiosidades" },
+    { href: "materiais.html", label: "Materiais" },
+    { href: "passo_a_passo.html", label: "Passo a Passo" },
+    { href: "cuidados.html", label: "Cuidados" },
+    { href: "colaboradores.html", label: "Colaboradores" },
+  ];
+
+  // Gera os links com a classe active no link da página atual
+  const menuLinks = links
+    .map(
+      (link) =>
+        `<a href="${link.href}"${
+          link.href === currentPage ? ' class="active"' : ""
+        }>${link.label}</a>`
+    )
+    .join("");
+
+  navBar.innerHTML = `
+    <div class="tema">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+      <h1>${nomeProjeto}</h1>
+    </div>
+    <menu>
+      <button onclick="menuToggle()" class="menu-button">
+        <span class="material-symbols-outlined burger"> menu </span>
+      </button>
+      <div class="menu">
+        ${menuLinks}
+      </div>
+    </menu>
+  `;
+
   // Adiciona o rodapé à todas as páginas
   const footer = document.querySelector("footer");
   footer.innerHTML = `
     <div class="acessibilidade">
+      <div class="opcoes-acessibilidade">
+        <button id="aumentar-fonte" onclick="aumentarFonte()">
+          <span class="material-symbols-outlined"> add </span>
+        </button>
+        <button id="diminuir-fonte" onclick="diminuirFonte()">
+          <span class="material-symbols-outlined"> remove </span>
+        </button>
+        <button id="resetar-fonte" onclick="resetarFonte()">
+          <span class="material-symbols-outlined"> restart_alt </span>
+        </button>
+      </div>
       <button id="acessibilidade" onclick="acessibilidade()">
         <span class="material-symbols-outlined"> accessibility_new </span>
       </button>
-      <div class="opcoes-acessibilidade">
-        <button id="aumentar-fonte" onclick="aumentarFonte()">A +</button>
-        <button id="diminuir-fonte" onclick="diminuirFonte()">A -</button>
-      </div>
     </div>
-    <p>&copy; 2025 <br> Projeto desenvolvido pelos alunos das turmas 3º A e 3º B do Colégio Adolpho</p>
+    <p>
+      &copy; 2025 <br>
+      Projeto desenvolvido pelos alunos das turmas 3º A e 3º B do Colégio Adolpho
+    </p>
   `;
 });

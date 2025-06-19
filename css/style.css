@@ -5,12 +5,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
 
 :root {
-  --primary-color: #3d7a3b;
-  --secondary-color: #a8d38f;
+  --primary-color: #2da32b;
+  --secondary-color: #cfc;
   --ternary-color: #7b5e47;
+  --background-title: #487e38;
+  --title-menu-color: #f5e4c3;
   --background-color: #f0f8f1;
-  --title-color: #fff;
-  --text-color: #6e8b61;
+  --title-color: #6e8b61;
+  --text-color: #fafafa;
+  --text-color-contrast: #1b1b1b;
+  --color-footer: #2a2a2a;
   --title-font: "Sansita Swashed", cursive;
   --body-font: "Roboto Mono", monospace;
   --shadow: 0 4px 8px #00000033;
@@ -31,33 +35,54 @@ body {
   background-color: var(--background-color);
 }
 
-header {
-  background-color: var(--primary-color);
-  color: var(--title-color);
-  font-family: var(--title-font);
-  width: auto;
-  padding: 25px;
-  text-align: center;
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-radius: 10px;
 }
 
-header h1 {
-  font-size: 3em;
+a:hover {
+  text-decoration: underline;
   color: var(--title-color);
+  border: 2px solid var(--ternary-color);
+  border-radius: 10px;
+}
+
+a.externo::after {
+  content: "\1F517";
 }
 
 nav {
   background-color: var(--primary-color);
-  color: var(--title-color);
   font-family: var(--body-font);
   position: sticky;
   top: 0;
   text-align: center;
   box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+}
+
+nav div.tema h1 {
+  font-family: var(--title-font);
+  color: var(--text-color);
+}
+
+nav div.tema {
+  display: flex;
+  padding: 10px;
+}
+
+nav menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav button {
   background-color: var(--primary-color);
-  color: var(--title-color);
+  color: var(--text-color);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -71,26 +96,49 @@ nav button:hover {
 nav div.menu {
   display: none;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
 }
 
 nav a {
-  color: var(--title-color);
+  color: var(--text-color);
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s ease;
-  width: 100%;
+  height: 100%;
+  width: 75%;
+  margin: 10px;
 }
 
 nav a:hover {
   background-color: var(--ternary-color);
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+nav a.active {
+  border: 2px solid var(--text-color);
+}
+
+nav a.logo:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+nav a.logo img {
+  margin: 5px;
 }
 
 main {
-  background-color: var(--secondary-color);
-  padding: 50px;
   font-family: var(--body-font);
   color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 main h1,
@@ -116,6 +164,62 @@ main a {
   font-family: var(--body-font);
   margin: auto;
   display: inline-block;
+  height: 50px;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  min-height: 75vh; /* Garante altura mínima para centralização */
+  text-align: center; /* Opcional: centraliza o texto */
+  padding: 10px;
+  background-color: var(--background-color);
+}
+
+main section:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+main section.title {
+  background-color: var(--background-title);
+}
+
+main section.title h1 {
+  font-size: 3em;
+  color: var(--title-menu-color);
+}
+
+main section span {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+
+div.botoes-title {
+  width: 75%;
+  display: inline;
+}
+
+div.botoes-title a {
+  margin: 10px;
+}
+
+div.botoes-title a:hover {
+  text-decoration: none;
+}
+
+main section ul,
+main section ol {
+  margin: 0 25%;
+  text-align: justify;
+  color: var(--text-color-contrast);
+}
+
+main section.menu {
+  background-color: var(--background-color);
 }
 
 main img {
@@ -123,14 +227,15 @@ main img {
   height: auto;
   display: block;
   margin: 20px auto;
+  border-radius: 8px;
 }
 
 main p,
 main .texto {
-  background-color: var(--background-color);
+  color: var(--text-color-contrast);
   border-radius: 10px;
-  border-left: 5px solid var(--ternary-color);
-  padding: 10px;
+  padding: 10px 25%;
+  text-align: justify;
   margin: 5px;
 }
 
@@ -146,11 +251,11 @@ main a:hover {
 }
 
 footer {
-  background-color: var(--primary-color);
-  color: var(--title-color);
+  background-color: var(--color-footer);
+  color: var(--text-color);
   width: auto;
-  padding: 10px;
-  text-align: center;
+  padding: 25px;
+  text-align: justify;
   font-family: var(--body-font);
   position: relative;
   bottom: 0;
@@ -161,6 +266,11 @@ div.acessibilidade {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+  display: grid;
+}
+
+button#acessibilidade {
+  margin: 10px auto;
 }
 
 .opcoes-acessibilidade {
@@ -183,7 +293,15 @@ div.acessibilidade button:hover {
   background-color: var(--secondary-color);
 }
 
+footer p {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
+  body {
+    font-size: 25%;
+  }
+
   header h1 {
     font-size: 3rem;
   }
@@ -198,22 +316,35 @@ div.acessibilidade button:hover {
     margin: 0 10px;
   }
 
+  nav div.menu {
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
   .menu-button {
     display: none;
   }
 
+  nav a.active {
+    border: 0;
+    border-bottom: 5px solid var(--text-color);
+  }
+
   main {
     display: block;
-    max-width: 900px;
     margin: auto;
-    padding: 50px;
     background: var(--secondary-color);
     box-shadow: var(--shadow);
   }
 
+  main section {
+    padding: 40px;
+  }
+
   main img {
     float: right;
-    width: 320px;
     max-width: 20%;
     margin: 20px;
     border-radius: 8px;
@@ -221,15 +352,9 @@ div.acessibilidade button:hover {
     display: block;
   }
 
-  main p,
-  main .texto {
-    max-width: 100%;
-    background: var(--background-color);
-    border-radius: 15px;
-    border-left: 5px solid var(--ternary-color);
-    padding: 15px;
-    margin-bottom: 24px;
-    text-align: justify;
+  main section.menu div.botoes a {
+    height: 50px;
+    margin: 15px;
   }
 }
 
