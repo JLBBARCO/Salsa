@@ -22,6 +22,7 @@
   --print-font: "Times New Roman", Times, serif;
   --print-background-color: #fff;
   --print-color: #000;
+  --nav-height: 60px; /* Altura padrão da nav para mobile */
 }
 
 * {
@@ -59,6 +60,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  height: var(--nav-height);
   transition: transform 0.3s;
   background-color: var(--primary-color);
   font-family: var(--body-font);
@@ -155,9 +157,7 @@ main {
   font-family: var(--body-font);
   color: var(--text-color);
   background-color: var(--background-color);
-  padding-top: calc(
-    var(--nav-height, 60px) + 20px
-  ); /* Espaço para o nav fixo */
+  padding-top: var(--nav-height); /* Garante espaço para a nav fixa */
 }
 
 main h1,
@@ -232,6 +232,7 @@ main section.title h1 {
 
 main section.title h2 {
   color: var(--title-menu-color);
+}
 
 main section h1 {
   font-size: 3em;
@@ -407,6 +408,10 @@ footer p {
 }
 
 @media (min-width: 768px) {
+  :root {
+    --nav-height: 85px; /* Altura da nav para desktop */
+  }
+
   body {
     font-size: 25%;
   }

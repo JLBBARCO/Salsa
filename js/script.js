@@ -174,11 +174,16 @@ document.addEventListener("DOMContentLoaded", function () {
       Projeto desenvolvido pelos alunos das turmas 3º A e 3º B do Colégio Adolpho
     </p>
   `;
+
+  // Agora que a nav existe, atribua à variável global
+  nav = document.querySelector("nav");
 });
 
 // Esconde a nav ao rolar para baixo e mostra ao rolar para cima
 let lastScroll = 0;
-let nav;
+let nav = null;
+
+// Evento de scroll para esconder/mostrar a nav
 window.addEventListener("scroll", function () {
   if (!nav) return;
   const currentScroll = window.pageYOffset;
