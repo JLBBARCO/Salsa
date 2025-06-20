@@ -11,10 +11,151 @@
     />
     <link rel="shortcut icon" href="img/salsinha.webp" type="image/x-icon" />
   </head>
-  <body>
+  <body onresize="mudouTamanhoJanela()">
     <nav></nav>
     <main>
-      <section></section>
+      <section>
+        <h1>Cuidados com a Salsa</h1>
+        <p>
+          A salsa é uma erva delicada que requer cuidados especiais para crescer
+          saudável e saborosa.
+        </p>
+      </section>
+      <section>
+        <h2>Cuidados Essenciais</h2>
+        <article class="cards">
+          <div class="card">
+            <div class="card-header">
+              <span id="sun" class="material-symbols-outlined"> wb_sunny </span>
+              <h3>Necessidade de Luz</h3>
+            </div>
+            <h4>Requisitos:</h4>
+            <ul>
+              <li>4-6 horas de luz solar direta por dia</li>
+              <li>Prefere luz da manhã ( mais suave )</li>
+              <li>Pode tolerar meia-sombra</li>
+              <li>Evite sol forte do meio-dia no verão</li>
+            </ul>
+            <h4>Sinais de Problema:</h4>
+            <ul class="alert">
+              <li>Folhas amarelas: excesso de sol</li>
+              <li>Crescimento estiolado: falta de luz</li>
+              <li>Folhas pequenas e pálidas: luz insuficiente</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span id="water" class="material-symbols-outlined">
+              water_drop
+            </span>
+            <h3>Irrigação Adequada</h3>
+            <h4>Requisitos</h4>
+            <ul>
+              <li>Diariamente em clima quente</li>
+              <li>Dia sim, dia não em clima ameno</li>
+              <li>Reduza no inverno</li>
+              <li>Use borrifador para mudas pequenas</li>
+            </ul>
+            <h4>Sinais de Problemas:</h4>
+            <ul class="alert">
+              <li>Folhas murchas: falta de água</li>
+              <li>Folhas amareladas na base: excesso de água</li>
+              <li>Fungos na terra: terra muito úmida</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span id="thermometer" class="material-symbols-outlined">
+              thermometer
+            </span>
+            <h3>Temperatura Ideal</h3>
+            <h4>Requisitos:</h4>
+            <ul>
+              <li>Ideal: 15°C a 25°C</li>
+              <li>Tolera: 10°C a 30°C</li>
+              <li>Evite temperaturas abaixo de 5°C</li>
+              <li>Proteja de geadas</li>
+            </ul>
+            <h4>Sinais de Problemas:</h4>
+            <ul class="alert">
+              <li>Crescimento lento: temperatura muito abaixo</li>
+              <li>Folhas ressecadas: temperatura muito alta</li>
+              <li>Morte da planta: geadas</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <section>
+        <span id="virus" class="material-symbols-outlined"> bug_report </span>
+        <h2>Pragas e Doenças Comuns</h2>
+        <article class="cards">
+          <div class="card">
+            <h3>Pulgões</h3>
+            <p>Pequenos insetos verdes ou pretos</p>
+            <h4>Tratamento:</h4>
+            <p>Solução de sabão neutro</p>
+            <h4>Prevenção:</h4>
+            <p>Boa circulação de ar</p>
+          </div>
+          <div class="card">
+            <h3>Lesmas</h3>
+            <p>Deixam rastros brilhantes</p>
+            <h4>Tratamento:</h4>
+            <p>Armadilhas de cerveja</p>
+            <h4>Prevenção:</h4>
+            <p>Evite excesso de umidade</p>
+          </div>
+          <div class="card">
+            <h3>Ácaros</h3>
+            <p>Pontos amarelos nas folhas</p>
+            <h4>Tratamento:</h4>
+            <p>Óleo de neem</p>
+            <h4>Prevenção:</h4>
+            <p>Mantenha umidade adequada</p>
+          </div>
+          <div class="card">
+            <h3>Moscas-brancas</h3>
+            <p>Pequenos insetos voadores</p>
+            <h4>Tratamento:</h4>
+            <p>Plantas aromáticas repelentes</p>
+            <h4>Prevenção:</h4>
+            <p>Remova folhas doentes</p>
+          </div>
+        </article>
+      </section>
+      <section>
+        <span id="pruning" class="material-symbols-outlined">
+          content_cut
+        </span>
+        <h2>Dicas de Manutenção</h2>
+        <article class="cards">
+          <div class="card">
+            <h3>Poda e limpeza</h3>
+            <ul>
+              <li>Remova folhas amareladas regularmente</li>
+              <li>Corte flores que aparecem</li>
+              <li>Faça podas leves para estimular crescimento</li>
+              <li>Mantenha a área ao redor limpa</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Adubação</h3>
+            <ul>
+              <li>Use húmus de minhoca mensalmente</li>
+              <li>Chá de cascas de banana ( potássio )</li>
+              <li>Borra de café diluída ( nitrogênio )</li>
+              <li>Evite adubos químicos em excesso</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Replantio</h3>
+            <ul>
+              <li>Troque a terra a cada 6 meses</li>
+              <li>Divida plantas muito grandes</li>
+              <li>Replante em recipientes maiores se necessário</li>
+              <li>Aproveite para renovar o sistema de drenagem</li>
+            </ul>
+          </div>
+        </article>
+      </section>
     </main>
     <footer></footer>
     <script src="js/script.js"></script>
