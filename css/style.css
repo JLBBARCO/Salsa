@@ -82,12 +82,19 @@ nav div.tema h1 {
 nav div.tema {
   display: flex;
   padding: 10px;
+  margin: auto;
+}
+
+nav div.tema h1 {
+  font-family: var(--title-font);
+  color: var(--text-color);
 }
 
 nav menu {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 nav button {
@@ -123,7 +130,6 @@ nav a {
   transition: background-color 0.3s ease;
   height: 100%;
   width: 75%;
-  margin: 10px;
 }
 
 nav a:hover {
@@ -225,24 +231,38 @@ main section.title h1 {
 }
 
 main section.title h2 {
-  font-size: 2em;
   color: var(--title-menu-color);
+
+main section h1 {
+  font-size: 3em;
+}
+
+main section h2 {
+  font-size: 2.5em;
 }
 
 main section span {
   font-family: var(--title-font);
   font-size: 2rem;
-  color: var(--title-color);
-  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+main section span#counter {
+  font-size: 2rem;
+  color: var(--text-color-contrast);
 }
 
 div.botoes-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 75%;
   display: inline;
 }
 
 div.botoes-title a {
   margin: 10px;
+  height: 50px;
 }
 
 div.botoes-title a:hover {
@@ -272,7 +292,7 @@ main p,
 main .texto {
   color: var(--text-color-contrast);
   border-radius: 10px;
-  padding: 10px 25%;
+  padding: 10px 1.5%;
   text-align: justify;
   margin: 5px;
 }
@@ -346,10 +366,8 @@ footer {
   color: var(--text-color);
   width: auto;
   padding: 25px;
-  text-align: justify;
+  text-align: center;
   font-family: var(--body-font);
-  position: relative;
-  bottom: 0;
 }
 
 div.acessibilidade {
@@ -393,6 +411,10 @@ footer p {
     font-size: 25%;
   }
 
+  nav {
+    height: 85px;
+  }
+
   nav div.menu {
     display: flex;
     flex-direction: row;
@@ -429,6 +451,10 @@ footer p {
 
   main section {
     padding: 40px;
+  }
+
+  main section p {
+    margin: 10px 25%;
   }
 
   main img {
