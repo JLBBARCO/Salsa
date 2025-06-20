@@ -175,3 +175,17 @@ document.addEventListener("DOMContentLoaded", function () {
     </p>
   `;
 });
+
+// Esconde a nav ao rolar para baixo e mostra ao rolar para cima
+let lastScroll = 0;
+let nav;
+window.addEventListener("scroll", function () {
+  if (!nav) return;
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    nav.classList.add("nav-escondida");
+  } else {
+    nav.classList.remove("nav-escondida");
+  }
+  lastScroll = currentScroll;
+});
