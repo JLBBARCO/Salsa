@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { href: "materiais.html", label: "Materiais" },
     { href: "passo_a_passo.html", label: "Passo a Passo" },
     { href: "cuidados.html", label: "Cuidados" },
+    { href: "galeria.html", label: "Galeria" },
     { href: "colaboradores.html", label: "Colaboradores" },
   ];
 
