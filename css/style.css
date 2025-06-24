@@ -246,12 +246,28 @@ main section.menu {
   background-color: var(--background-color);
 }
 
+section picture {
+  display: block;
+  position: relative;
+}
+
 section a.galeria-link {
   position: relative;
   display: inline-block;
   width: 100%;
   max-width: 400px;
-  /* ajuste conforme necessário */
+  color: var(--text-color);
+  margin: 10px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 8px;
+  height: 100%;
+}
+
+section a.galeria-link:hover {
+  background-color: transparent;
+  color: var(--text-color-contrast);
+  text-decoration: none;
 }
 
 section a.galeria-link h2 {
@@ -263,56 +279,10 @@ section a.galeria-link h2 {
   color: #fff;
   padding: 8px 16px;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   z-index: 2;
   pointer-events: none;
-  /* Remove float e outros estilos antigos */
   float: none;
-}
-
-section a.galeria-link picture {
-  display: block;
-  position: relative;
-}
-
-/* Para telas maiores que 768px */
-@media (min-width: 768px) {
-  section a.galeria-link {
-    max-width: 50vw;
-  }
-  section a.galeria-link h2 {
-    left: 50%;
-    transform: translateX(-50%);
-    right: auto;
-    bottom: 10px;
-    font-size: 2rem;
-    /* Centraliza horizontal, mantém na base */
-  }
-}
-
-section a.galeria-link {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  background-color: transparent;
-  color: var(--text-color);
-  border-radius: 8px;
-  height: 100%;
-  width: auto;
-  padding: 0;
-}
-
-section a.galeria-link:hover {
-  background-color: transparent;
-  color: var(--text-color-contrast);
-  text-decoration: none;
-}
-
-section a.galeria-link h2 {
-  font-size: 1.5rem;
-  color: var(--text-color-contrast);
-  margin: 10px 0;
-  float: inline-start;
 }
 
 section a.galeria-link img {
@@ -349,6 +319,11 @@ div.botoes {
 main button:hover,
 main a:hover {
   background-color: var(--secondary-color);
+}
+
+picture img {
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -396,7 +371,13 @@ footer p {
   text-align: center;
 }
 
-@media (min-width: 768px) {
+#colab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (min-width: 820px) {
   body {
     font-size: 25%;
   }
@@ -455,11 +436,21 @@ footer p {
     margin: 10px;
     padding: 10px;
     background-color: transparent;
-    color: var(--text-color);
     border-radius: 8px;
     height: auto;
     max-width: 50vw;
     padding: 0;
+  }
+
+  main section a.galeria-link h2 {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    bottom: 10px;
+    font-size: 2rem;
+    margin: 10px 0;
+    float: none;
+    text-align: center;
   }
 
   main img {
@@ -474,9 +465,8 @@ footer p {
     height: 50px;
     margin: 15px;
   }
-}
 
-@page {
-  size: A4;
-  margin: 3cm 2cm 2cm 3cm;
+  picture.principais-colaboradores {
+    width: 50vw;
+  }
 }
