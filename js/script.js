@@ -157,17 +157,17 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="acessibilidade">
       <div class="opcoes-acessibilidade">
         <button id="aumentar-fonte" onclick="aumentarFonte()">
-          <span class="material-symbols-outlined"> add </span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
         </button>
         <button id="diminuir-fonte" onclick="diminuirFonte()">
-          <span class="material-symbols-outlined"> remove </span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-440v-80h560v80H200Z"/></svg>
         </button>
         <button id="resetar-fonte" onclick="resetarFonte()">
-          <span class="material-symbols-outlined"> restart_alt </span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg>
         </button>
       </div>
       <button id="acessibilidade" onclick="acessibilidade()">
-        <span class="material-symbols-outlined"> accessibility_new </span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-80v-520q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-720l20 80q-56 15-118 25t-122 15v520h-80v-240h-80v240h-80Z"/></svg>
       </button>
     </div>
     <p>

@@ -222,15 +222,17 @@ div.botoes-title {
   align-items: center;
   width: 75%;
   display: inline;
+  flex-direction: column;
 }
 
 div.botoes-title a {
   margin: 10px;
-  height: 50px;
+  color: var(--text-color);
 }
 
 div.botoes-title a:hover {
   text-decoration: none;
+  color: var(--text-color-contrast);
 }
 
 main section ul,
@@ -252,11 +254,6 @@ section a.galeria-link {
   /* ajuste conforme necessário */
 }
 
-section a.galeria-link picture {
-  display: block;
-  position: relative;
-}
-
 section a.galeria-link h2 {
   position: absolute;
   right: 10px;
@@ -271,6 +268,11 @@ section a.galeria-link h2 {
   pointer-events: none;
   /* Remove float e outros estilos antigos */
   float: none;
+}
+
+section a.galeria-link picture {
+  display: block;
+  position: relative;
 }
 
 /* Para telas maiores que 768px */
