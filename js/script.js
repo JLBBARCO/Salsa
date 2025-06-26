@@ -59,7 +59,7 @@ function menuToggle() {
 function mudouTamanhoJanela() {
   const itens = document.querySelector(".menu");
   const burger = document.querySelector(".burger");
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 990) {
     itens.style.display = "flex";
   } else {
     itens.style.display = "none";
