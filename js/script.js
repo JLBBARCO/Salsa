@@ -67,6 +67,9 @@ function mudouTamanhoJanela() {
   }
 }
 
+let nav = null; // Definida fora para garantir acesso no scroll
+let lastScroll = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
   // Sistema de Compartilhamento
   const shareBtn = document.getElementById("share");
@@ -169,9 +172,46 @@ document.addEventListener("DOMContentLoaded", function () {
         <img src="../assets/icons/accessibility.svg" alt="Acessibilidade" class="icon" />
       </button>
     </div>
-    <p>
-      &copy; 2025 <br>
-      Projeto desenvolvido pelos alunos das turmas 3º A e 3º B do Colégio Adolpho
+    <section class="cards-footer">
+      <div class="mais-informacoes">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+        <h2>${nomeProjeto}</h2>
+        <p>Transformando materiais escolares em hortas sustentáveis e educativas. Juntos por um futuro mais verde e consciente.</p>
+      </div>
+      <div class="links-rapidos">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="materiais.html">Materiais</a></li>
+          <li><a href="passo_a_passo.html">Passo a Passo</a></li>
+        </ul>
+      </div>
+      <div class="recursos">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="cuidados.html">Cuidados</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+      </div>
+    </section>
+    <p class="copyright">
+      &copy; 2025 Projeto Tecnoverde. Todos os direitos reservados.
     </p>
   `;
+
+  // Agora que a nav existe, atribua à variável global
+  nav = document.querySelector("nav");
+});
+
+// Esconde a nav ao rolar para baixo e mostra ao rolar para cima
+window.addEventListener("scroll", function () {
+  if (!nav) return;
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    nav.classList.add("nav-escondida");
+  } else {
+    nav.classList.remove("nav-escondida");
+  }
+  lastScroll = currentScroll;
 });

@@ -27,7 +27,8 @@
   --color-footer: #2a2a2a;
   --title-font: "Sansita Swashed", cursive;
   --body-font: "Roboto Mono", monospace;
-  --shadow: 0 4px 8px #00000033;
+  --color-shadow: #00000033;
+  --shadow: 0 7px 10px var(--color-shadow);
   --print-font: "Times New Roman", Times, serif;
   --print-background-color: #fff;
   --print-color: #000;
@@ -88,6 +89,15 @@ nav {
   box-shadow: var(--shadow);
   display: flex;
   justify-content: space-between;
+}
+
+nav.nav-escondida {
+  transform: translateY(-100%);
+}
+
+nav div.tema h1 {
+  font-family: var(--title-font);
+  color: var(--text-color);
 }
 
 nav div.tema {
@@ -211,12 +221,36 @@ main section:nth-child(odd) {
   background-color: var(--secondary-color);
 }
 
+main section h1 {
+  font-size: 2.5em;
+  color: var(--title-color);
+}
+
+main section h2 {
+  font-size: 2em;
+  color: var(--title-color);
+}
+
+main section h3 {
+  font-size: 1.5em;
+  color: var(--title-color);
+}
+
+main section h4 {
+  font-size: 1.2em;
+  color: var(--title-color);
+}
+
 main section.title {
   background-color: var(--background-title);
 }
 
 main section.title h1 {
   font-size: 3em;
+  color: var(--title-menu-color);
+}
+
+main section.title h2 {
   color: var(--title-menu-color);
 }
 
@@ -397,6 +431,59 @@ div.colaboradores p {
 }
 
 /* Configurações do rodapé */
+main article.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; /* Espaço entre os cards */
+  align-items: stretch;
+  padding: 24px 0;
+}
+
+main div.card {
+  flex: 1 1 300px; /* Cresce, encolhe, largura mínima */
+  max-width: 350px;
+  min-width: 260px;
+  margin: 0;
+  border-radius: 10px;
+  border: 2px solid var(--color-shadow);
+  box-shadow: var(--shadow);
+  padding: 10px;
+  background-color: var(--background-color);
+}
+
+main div.card:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 10px 15px var(--color-shadow);
+  transform: scale(1.02);
+}
+
+main div.card span#sun {
+  font-size: 2em;
+  color: #fa0;
+}
+
+main div.card span#water {
+  font-size: 2em;
+  color: #00f;
+}
+
+main div.card span#thermometer,
+main section span#virus {
+  font-size: 2em;
+  color: #f00;
+}
+
+main section span#pruning {
+  font-size: 2em;
+  color: #0f0;
+}
+
+main div.card ul.alert {
+  color: #f00;
+  list-style-image: url("img/assets/info.svg");
+}
+
 footer {
   background-color: var(--color-footer);
   color: var(--text-color);
@@ -404,6 +491,11 @@ footer {
   padding: 25px;
   text-align: center;
   font-family: var(--body-font);
+}
+
+footer div {
+  margin: 50px auto;
+  text-align: justify;
 }
 
 div.acessibilidade {
@@ -438,12 +530,33 @@ div.acessibilidade button:hover {
   background-color: var(--secondary-color);
 }
 
-footer p {
-  text-align: center;
+footer h3 {
+  margin: 50px 0 20px;
+}
+
+footer a:hover {
+  text-decoration: none;
+  border: none;
+  color: var(--title-color);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.copyright {
+  font-size: 0.8em;
+  padding-top: 10px;
+  border-top: 1px solid var(--text-color);
 }
 
 /* Configurações de Responsividade */
 @media (min-width: 990px) {
+  body {
+    font-size: 25%;
+  }
   nav {
     height: 85px;
   }
@@ -452,6 +565,7 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    overflow-x: auto;
   }
 
   nav button {
@@ -599,5 +713,33 @@ footer p {
   .reference {
     font-size: 0.9em;
     margin: 0;
+
+  section.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  footer {
+    font-size: 1em;
+  }
+
+  .cards-footer {
+    display: flex;
+  }
+
+  .mais-informacoes,
+  .links-rapidos,
+  .recursos {
+    width: 100%;
+    margin: 50px;
+    flex: auto;
+  }
+
+  footer .copyright {
+    width: 100%;
   }
 }
