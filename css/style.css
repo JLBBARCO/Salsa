@@ -2,18 +2,16 @@
 
 @font-face {
   font-family: "Sansita Swashed";
-  src: url(../media/fonts/Sansita_Swashed/SansitaSwashed-VariableFont_wght.ttf)
+  src: url(../assets/fonts/Sansita_Swashed/SansitaSwashed.ttf)
     format("truetype");
 }
 @font-face {
   font-family: "Roboto Mono";
-  src: url(../media/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf)
-    format("truetype");
+  src: url(../assets/fonts/Roboto_Mono/RobotoMono.ttf) format("truetype");
 }
 @font-face {
   font-family: "Winky Sans";
-  src: url(../media/fonts/Winky_Sans/WinkySans-VariableFont_wght.ttf)
-    format("truetype");
+  src: url(../assets/fonts/Winky_Sans/WinkySans.ttf) format("truetype");
 }
 
 :root {
@@ -66,6 +64,14 @@ a:hover {
 
 a.externo::after {
   content: "\1F517";
+}
+
+.icon {
+  box-shadow: none;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 /* Configurações da Barra de Navegação */

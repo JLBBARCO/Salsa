@@ -48,10 +48,10 @@ function menuToggle() {
   var menu = document.querySelector(".menu");
   if (menu.style.display === "flex") {
     menu.style.display = "none";
-    document.querySelector("span.burger").innerHTML = "menu";
+    document.getElementById("menu-icon").src = "assets/icons/menu.svg";
   } else {
     menu.style.display = "flex";
-    document.querySelector("span.burger").innerHTML = "close";
+    document.getElementById("menu-icon").src = "assets/icons/close.svg";
   }
 }
 
@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { href: "materiais.html", label: "Materiais" },
     { href: "passo_a_passo.html", label: "Passo a Passo" },
     { href: "cuidados.html", label: "Cuidados" },
-    { href: "galeria.html", label: "Galeria" },
     { href: "colaboradores.html", label: "Colaboradores" },
   ];
 
@@ -138,12 +137,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navBar.innerHTML = `
     <div class="tema">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+      <img src="../assets/icons/leaf.svg" alt="Tema" class="icon">
       <h1>${nomeProjeto}</h1>
     </div>
     <menu>
       <button onclick="menuToggle()" class="menu-button">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        <img src="../assets/icons/menu.svg" alt="Menu" class="icon" id='menu-icon'>
       </button>
       <div class="menu">
         ${menuLinks}
@@ -157,17 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="acessibilidade">
       <div class="opcoes-acessibilidade">
         <button id="aumentar-fonte" onclick="aumentarFonte()">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+          <img src="../assets/icons/increase_font.svg" alt="Aumentar Fonte" class="icon">
         </button>
         <button id="diminuir-fonte" onclick="diminuirFonte()">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-440v-80h560v80H200Z"/></svg>
+          <img src="../assets/icons/decrease_font.svg" alt="Diminuir Fonte" class="icon">
         </button>
         <button id="resetar-fonte" onclick="resetarFonte()">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-122q-121-15-200.5-105.5T160-440q0-66 26-126.5T260-672l57 57q-38 34-57.5 79T240-440q0 88 56 155.5T440-202v80Zm80 0v-80q87-16 143.5-83T720-440q0-100-70-170t-170-70h-3l44 44-56 56-140-140 140-140 56 56-44 44h3q134 0 227 93t93 227q0 121-79.5 211.5T520-122Z"/></svg>
+          <img src="../assets/icons/format_clear.svg" alt="Resetar Fonte" class="icon">
         </button>
       </div>
       <button id="acessibilidade" onclick="acessibilidade()">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-720q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720ZM360-80v-520q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-720l20 80q-56 15-118 25t-122 15v520h-80v-240h-80v240h-80Z"/></svg>
+        <img src="../assets/icons/accessibility.svg" alt="Acessibilidade" class="icon" />
       </button>
     </div>
     <p>
