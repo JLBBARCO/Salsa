@@ -48,10 +48,10 @@ function menuToggle() {
   var menu = document.querySelector(".menu");
   if (menu.style.display === "flex") {
     menu.style.display = "none";
-    document.querySelector("span.burger").innerHTML = "menu";
+    document.getElementById("menu-icon").src = "assets/icons/menu.svg";
   } else {
     menu.style.display = "flex";
-    document.querySelector("span.burger").innerHTML = "close";
+    document.getElementById("menu-icon").src = "assets/icons/close.svg";
   }
 }
 
@@ -59,7 +59,7 @@ function menuToggle() {
 function mudouTamanhoJanela() {
   const itens = document.querySelector(".menu");
   const burger = document.querySelector(".burger");
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 990) {
     itens.style.display = "flex";
   } else {
     itens.style.display = "none";
@@ -140,12 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navBar.innerHTML = `
     <div class="tema">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+      <img src="../assets/icons/leaf.svg" alt="Tema" class="icon">
       <h1>${nomeProjeto}</h1>
     </div>
     <menu>
       <button onclick="menuToggle()" class="menu-button">
-        <span class="material-symbols-outlined burger"> menu </span>
+        <img src="../assets/icons/menu.svg" alt="Menu" class="icon" id='menu-icon'>
       </button>
       <div class="menu">
         ${menuLinks}
@@ -159,17 +159,17 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="acessibilidade">
       <div class="opcoes-acessibilidade">
         <button id="aumentar-fonte" onclick="aumentarFonte()">
-          <span class="material-symbols-outlined"> add </span>
+          <img src="../assets/icons/increase_font.svg" alt="Aumentar Fonte" class="icon">
         </button>
         <button id="diminuir-fonte" onclick="diminuirFonte()">
-          <span class="material-symbols-outlined"> remove </span>
+          <img src="../assets/icons/decrease_font.svg" alt="Diminuir Fonte" class="icon">
         </button>
         <button id="resetar-fonte" onclick="resetarFonte()">
-          <span class="material-symbols-outlined"> restart_alt </span>
+          <img src="../assets/icons/format_clear.svg" alt="Resetar Fonte" class="icon">
         </button>
       </div>
       <button id="acessibilidade" onclick="acessibilidade()">
-        <span class="material-symbols-outlined"> accessibility_new </span>
+        <img src="../assets/icons/accessibility.svg" alt="Acessibilidade" class="icon" />
       </button>
     </div>
     <section class="cards-footer">
