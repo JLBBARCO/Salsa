@@ -284,6 +284,7 @@ div.botoes-title {
 }
 
 div.botoes-title a {
+  height: auto;
   margin: 10px;
   color: var(--text-color);
 }
@@ -459,30 +460,9 @@ main div.card:hover {
   transform: scale(1.02);
 }
 
-main div.card span#sun {
-  font-size: 2em;
-  color: #fa0;
-}
-
-main div.card span#water {
-  font-size: 2em;
-  color: #00f;
-}
-
-main div.card span#thermometer,
-main section span#virus {
-  font-size: 2em;
-  color: #f00;
-}
-
-main section span#pruning {
-  font-size: 2em;
-  color: #0f0;
-}
-
 main div.card ul.alert {
   color: #f00;
-  list-style-image: url("img/assets/info.svg");
+  list-style-image: url("../assets/icons/warning.svg");
 }
 
 footer {

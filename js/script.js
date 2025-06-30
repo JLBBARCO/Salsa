@@ -140,12 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navBar.innerHTML = `
     <div class="tema">
-      <img src="../assets/icons/leaf.svg" alt="Tema" class="icon">
+      <img src="assets/icons/leaf.svg" alt="Tema" class="icon">
       <h1>${nomeProjeto}</h1>
     </div>
     <menu>
       <button onclick="menuToggle()" class="menu-button">
-        <img src="../assets/icons/menu.svg" alt="Menu" class="icon" id='menu-icon'>
+        <img src="assets/icons/menu.svg" alt="Menu" class="icon" id='menu-icon'>
       </button>
       <div class="menu">
         ${menuLinks}
@@ -153,45 +153,54 @@ document.addEventListener("DOMContentLoaded", function () {
     </menu>
   `;
 
+  const linksRapidos = [
+    { href: "index.html", label: "Início" },
+    { href: "sobre.html", label: "Sobre" },
+    { href: "materiais.html", label: "Materiais" },
+    { href: "passo_a_passo.html", label: "Passo a Passo" },
+  ];
+
+  const recursos = [{ href: "cuidados.html", label: "Cuidados" }];
+
   // Adiciona o rodapé à todas as páginas
   const footer = document.querySelector("footer");
   footer.innerHTML = `
     <div class="acessibilidade">
       <div class="opcoes-acessibilidade">
         <button id="aumentar-fonte" onclick="aumentarFonte()">
-          <img src="../assets/icons/increase_font.svg" alt="Aumentar Fonte" class="icon">
+          <img src="assets/icons/increase_font.svg" alt="Aumentar Fonte" class="icon">
         </button>
         <button id="diminuir-fonte" onclick="diminuirFonte()">
-          <img src="../assets/icons/decrease_font.svg" alt="Diminuir Fonte" class="icon">
+          <img src="assets/icons/decrease_font.svg" alt="Diminuir Fonte" class="icon">
         </button>
         <button id="resetar-fonte" onclick="resetarFonte()">
-          <img src="../assets/icons/format_clear.svg" alt="Resetar Fonte" class="icon">
+          <img src="assets/icons/format_clear.svg" alt="Resetar Fonte" class="icon">
         </button>
       </div>
       <button id="acessibilidade" onclick="acessibilidade()">
-        <img src="../assets/icons/accessibility.svg" alt="Acessibilidade" class="icon" />
+        <img src="assets/icons/accessibility.svg" alt="Acessibilidade" class="icon" />
       </button>
     </div>
     <section class="cards-footer">
       <div class="mais-informacoes">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf h-6 w-6 text-white" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
-        <h2>${nomeProjeto}</h2>
+        <img src="assets/icons/leaf.svg" alt="Tema" class="icon" id="icon-tema"/>
+        <h2 id="nome-projeto">${nomeProjeto}</h2>
         <p>Transformando materiais escolares em hortas sustentáveis e educativas. Juntos por um futuro mais verde e consciente.</p>
       </div>
       <div class="links-rapidos">
         <h3>Links Rápidos</h3>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="materiais.html">Materiais</a></li>
-          <li><a href="passo_a_passo.html">Passo a Passo</a></li>
+          ${linksRapidos
+            .map((link) => `<a href="${link.href}">${link.label}</a>`)
+            .join("<br>")}
         </ul>
       </div>
       <div class="recursos">
         <h3>Recursos</h3>
         <ul>
-          <li><a href="cuidados.html">Cuidados</a></li>
-          <li><a href="galeria.html">Galeria</a></li>
+          ${recursos
+            .map((link) => `<a href="${link.href}">${link.label}</a>`)
+            .join("<br>")}
         </ul>
       </div>
     </section>
