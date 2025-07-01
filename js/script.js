@@ -183,8 +183,10 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <section class="cards-footer">
       <div class="mais-informacoes">
-        <img src="assets/icons/leaf.svg" alt="Tema" class="icon" id="icon-tema"/>
-        <h2 id="nome-projeto">${nomeProjeto}</h2>
+        <div class="logo-footer">
+          <img src="assets/icons/leaf.svg" alt="Tema" class="icon" id="icon-tema"/>
+          <h2 id="nome-projeto">${nomeProjeto}</h2>
+        </div>
         <p>Transformando materiais escolares em hortas sustentáveis e educativas. Juntos por um futuro mais verde e consciente.</p>
       </div>
       <div class="links-rapidos">

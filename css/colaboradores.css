@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+div.colaboradores {
+  width: 95%;
+  text-align: center;
+}
+
+div.colaboradores h3 {
+  font-size: 1.75em;
+}
+
+div.colaboradores p {
+  text-align: center;
+}
+
+#colab picture,
+#colab-adicionais picture {
+  width: 75vw;
+  height: auto;
+  margin: 10px;
+  padding: 0;
+}
+
+#colab picture img,
+#colab-adicionais picture img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+@media (min-width: 990px) {
+  #colab h2,
+  #colab-adicionais h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+  }
+
+  #colab,
+  #colab-adicionais {
+    display: block;
+  }
+
+  #colab .colab-row,
+  #colab-adicionais .colab-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    gap: 40px;
+  }
+
+  #colab .colaboradores,
+  #colab-adicionais .colaboradores {
+    width: 40%;
+    text-align: center;
+  }
+
+  #colab .img-colaboradores,
+  #colab-adicionais .img-colaboradores {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  #colab .img-colaboradores img,
+  #colab-adicionais .img-colaboradores img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .colaboradores p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media print {
+}
