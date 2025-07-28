@@ -46,7 +46,7 @@ div.colaboradores p {
   #colab-adicionais .colab-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: stretch;
     width: 100%;
     gap: 40px;
@@ -80,7 +80,4 @@ div.colaboradores p {
     margin: 0;
     padding: 0;
   }
-}
-
-@media print {
 }

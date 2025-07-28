@@ -31,6 +31,3 @@ div.card ul.alert {
   color: #f00;
   list-style-image: url("../assets/icons/warning.svg");
 }
-
-@media print {
-}

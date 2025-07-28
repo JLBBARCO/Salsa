@@ -160,7 +160,10 @@ document.addEventListener("DOMContentLoaded", function () {
     { href: "passo_a_passo.html", label: "Passo a Passo" },
   ];
 
-  const recursos = [{ href: "cuidados.html", label: "Cuidados" }];
+  const recursos = [
+    { href: "cuidados.html", label: "Cuidados" },
+    { href: "colaboradores.html", label: "Colaboradores" },
+  ];
 
   // Adiciona o rodapé à todas as páginas
   const footer = document.querySelector("footer");

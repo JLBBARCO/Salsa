@@ -521,6 +521,9 @@ footer ul {
 
   .cards-footer {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .mais-informacoes,
@@ -533,32 +536,5 @@ footer ul {
 
   footer .copyright {
     width: 100%;
-  }
-}
-
-@page {
-  size: A4;
-  margin: 3cm 2cm 2cm 3cm;
-}
-
-@media print {
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  nav,
-  footer,
-  .botoes-title a {
-    display: none;
-  }
-
-  main {
-    margin: 0;
-    padding: 0;
-  }
-
-  section {
-    page-break-inside: avoid;
   }
 }
