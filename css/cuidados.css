@@ -10,14 +10,13 @@ article.cards {
 }
 
 div.card {
-  flex: 1 1 300px; /* Cresce, encolhe, largura mínima */
-  max-width: 350px;
-  min-width: 260px;
+  flex: auto; /* Cresce, encolhe, largura mínima */
+  min-width: 25%;
   margin: 0;
   border-radius: 10px;
   border: 2px solid var(--color-shadow);
   box-shadow: var(--shadow);
-  padding: 10px;
+  padding: 25px;
   background-color: var(--background-color);
 }
 

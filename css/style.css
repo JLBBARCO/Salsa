@@ -296,7 +296,7 @@ div.botoes-title a:hover {
 
 main section ul,
 main section ol {
-  margin: 0 25%;
+  margin: 0 10%;
   text-align: justify;
   color: var(--text-color-contrast);
 }
@@ -499,6 +499,11 @@ footer ul {
   main section.menu div.botoes a {
     height: 50px;
     margin: 15px;
+  }
+
+  main section ul,
+  main section ol {
+    margin: 0 25%;
   }
 
   .reference {
